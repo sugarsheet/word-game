@@ -1,0 +1,21 @@
+<h1><b>Welcome to the longest word-game!</b> </h1><br>
+
+<% @letters.each do |letter| %>
+  <%= letter %>
+<% end %>
+
+
+<h2> What is the longest word you can find? </h2><br>
+<form action="/score" method="post">
+  <input type="text" name="word" placeholder="Longest word you can find?">
+  <input type="submit">
+  <%= hidden_field_tag 'letters', @letters %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
+
+<%= link_to "New Game", new_path %>
+
+
+
+
+
